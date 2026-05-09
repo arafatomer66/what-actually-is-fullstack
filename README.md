@@ -45,6 +45,7 @@ This isn't a tutorial. It's a **menu** you can browse when:
   - [27. Domain-Specific Layers](#27-domain-specific-layers)
   - [28. Organizational Layer](#28-organizational-layer)
 - [How to Use This List](#how-to-use-this-list)
+- [Senior Engineer's Filter — Know Now vs Explore Later](#senior-engineers-filter--know-now-vs-explore-later)
 - [What This List Is NOT](#what-this-list-is-not)
 - [Contributing](#contributing)
 - [License](#license)
@@ -469,6 +470,60 @@ When walking through the list for your project, ask:
 | Compliance | unmanaged services, hand-rolled auth | audit logs, IdP, encryption, vendor review |
 | Cost | premium SaaS, multi-cloud | FinOps tagging, rightsizing, reserved capacity |
 | Scale | monolith-only patterns | caching, queues, async, capacity planning |
+
+---
+
+## Senior Engineer's Filter — Know Now vs Explore Later
+
+You don't need fluency in all 400 items. As a senior, you need **deep working knowledge of the request path and cross-cutting basics**, and the ability to **pick up specialized layers on demand** when a project actually needs them.
+
+The mistake juniors make is trying to pre-learn everything. The mistake mid-levels make is going deep on the wrong things. The senior move is knowing **which 15% to be fluent in and which 85% to look up while building.**
+
+### Need to know NOW (fluency — should be able to architect, debug, and reason about without looking up)
+
+1. **HTTP & API design** — methods, status codes, idempotency, versioning, REST/GraphQL/gRPC tradeoffs
+2. **One frontend framework deeply** — rendering, state, routing, lifecycle (React, Vue, or Angular)
+3. **Relational databases** — schema design, indexes, transactions, isolation levels, N+1, query plans
+4. **Auth fundamentals** — sessions vs tokens, OAuth/OIDC flow, password hashing, CSRF/XSS, JWT pitfalls
+5. **Git** — branching, rebase, merge, resolving conflicts, recovering from mistakes
+6. **One cloud provider's core** — compute, VPC/subnets, IAM, object storage, managed DBs
+7. **Containers** — images, layers, volumes, networking, multi-stage builds
+8. **Caching** — when to cache, invalidation strategies, Redis primitives, cache stampedes
+9. **Async patterns** — queues vs streams, at-least-once vs exactly-once, idempotency, retries, DLQs
+10. **Security baseline** — OWASP Top 10, TLS, secrets management (and why never to commit them)
+11. **Observability essentials** — structured logging, the four golden signals, reading a trace
+12. **Testing** — unit vs integration vs E2E, when to mock vs when not to, test pyramid
+13. **CI/CD** — pipeline anatomy, artifacts, deployment strategies (blue/green, canary)
+14. **Performance fundamentals** — Big-O, latency budgets, bottleneck identification, profiling
+15. **System design tradeoffs** — CAP, consistency models, sharding, replication, eventual consistency
+16. **Linux & networking basics** — processes, file descriptors, DNS, TCP, ports, `curl`/`dig`/`tcpdump`
+
+### Explore WHILE BUILDING (look it up when the project demands it — pre-learning is mostly wasted)
+
+- **Service mesh** (Istio, Linkerd) — only when service count justifies it
+- **Stream processing** (Flink, Kafka Streams, ksqlDB) — only with real streaming workloads
+- **ML/AI ops** — vector DBs, model serving, RAG, evals — only when shipping AI features
+- **Specific BI tools** (Looker, Tableau, Metabase) — only when in a data-heavy role
+- **Internal Developer Platforms** (Backstage, golden paths) — only at platform-team scale
+- **Chaos engineering** (Gremlin, Chaos Mesh) — only when reliability budget supports it
+- **SIEM/SOAR specifics** — only in a security-focused role
+- **Compliance frameworks** (SOC 2, HIPAA, PCI-DSS) — only when an audit is on the calendar
+- **Payment processors** (Stripe, Adyen) — only when actually building payments
+- **Niche databases** (graph, time-series, vector) — only when the data shape demands it
+- **Specific cloud services beyond core** — read the docs the day you need them
+- **Domain-specific layers** (gaming netcode, EHR/FHIR, blockchain, IoT MQTT) — only in that domain
+- **Multi-region / DR** — only past serious scale (Series B+, regulated)
+- **Edge compute** (Workers, Lambda@Edge) — only when latency budget demands it
+- **Advanced IaC** (custom Terraform modules, operators, CRDs) — fluency comes from doing, not reading
+- **Service mesh, mTLS, SPIFFE** — only at zero-trust-mature orgs
+- **Reverse ETL, data catalogs** (Hightouch, DataHub) — only in data-platform roles
+- **Specialized observability** (continuous profiling, eBPF tooling) — only when the basic stack is exhausted
+
+### The principle
+
+**Fluency in the request path + cross-cutting basics; on-demand for specialized planes.**
+
+If you can confidently design a request from browser to database and back — covering auth, caching, queue, observability, deployment — you have the senior baseline. Everything else is research-on-arrival, and that's fine. The list is here exactly so you know what to research when the moment comes.
 
 ---
 
